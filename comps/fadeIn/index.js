@@ -1,10 +1,10 @@
-import hoc from 'comps/fillContent/hoc'
+import hoc from 'comps/fadeIn/hoc'
 import React from 'react'
-import style from 'comps/fillContent/style'
+import style from 'comps/fadeIn/style'
 
 const v1=
 ({children,content,...rest})=>
-<div {...rest} className={`${style.fadein}`}>
+<div {...rest} className={`${style.fadein} ${style.container}`}>
   {
     content||
     <span>undefined</span>

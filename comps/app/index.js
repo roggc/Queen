@@ -4,8 +4,10 @@ import style from 'comps/app/style'
 import {V1 as Header} from 'comps/header/index'
 import {V1 as Content} from 'comps/content/index'
 import {V1 as Footer} from 'comps/footer/index'
-import {V1 as FillContent} from 'comps/fillContent/index'
+import {V1 as FadeIn} from 'comps/FadeIn/index'
 import {Route} from 'react-router-dom'
+import {V1 as Login} from 'comps/form1/index'
+import {V1 as Center} from 'comps/center/index'
 
 const v1=
 ({children,...rest})=>
@@ -18,22 +20,44 @@ const v1=
   <Content content=
     {
       <div>
-        <Route path='/' exact render=
+        <Center content=
         {
-          ()=><FillContent content=
-          {
-            <span>hello ...</span>
-          }
-          />
-        }/>
-        <Route path='/about' render=
-        {
-          ()=><FillContent content=
-          {
-            <span>bye ...</span>
-          }
-          />
-        }/>
+          <div>
+            <Route path='/' exact render=
+            {
+              ()=><FadeIn content=
+              {
+                <Login content=
+                {
+                  {
+                    label1:<span>name:</span>,
+                    label2:<span>email:</span>,
+                  }
+                }
+                />
+              }
+              />
+            }
+            />
+            <Route path='/about' render=
+            {
+              ()=><FadeIn content=
+              {
+                <Login content=
+                {
+                  {
+                    label1:<span>name:</span>,
+                    label2:<span>email:</span>,
+                  }
+                }
+                />
+              }
+              />
+            }
+            />
+          </div>
+        }
+        style={{minHeight:'300px'}}/>
       </div>
     }
   />

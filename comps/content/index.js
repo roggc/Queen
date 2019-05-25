@@ -4,7 +4,7 @@ import style from 'comps/content/style'
 
 const v1=
 ({children,content,...rest})=>
-<div className={style.background} {...rest}>
+<div className={style.border} {...rest}>
   {content}
 </div>
 
