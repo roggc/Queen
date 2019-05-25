@@ -1,3 +1,3 @@
 ## Queen
 
-evolution of *King*
+evolution of *king*
