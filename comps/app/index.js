@@ -6,6 +6,7 @@ import {V1 as Content} from 'comps/content/index'
 import {V1 as Footer} from 'comps/footer/index'
 import {V1 as FadeIn} from 'comps/FadeIn/index'
 import {Route} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {V1 as Login} from 'comps/form1/index'
 import {V1 as Center} from 'comps/center/index'
 
@@ -14,7 +15,19 @@ const v1=
 <div className={`${style.generics}`} {...rest}>
   <Header content=
     {
-      <span>Wellcome</span>
+      {
+        message:
+          <span>Wellcome</span>,
+        menu:
+          <div>
+            <div>
+              <Link to="/">home</Link>
+            </div>
+            <div>
+              <Link to="/about">about</Link>
+            </div>
+          </div>
+      }
     }
   />
   <Content content=
