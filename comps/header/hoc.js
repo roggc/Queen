@@ -1,14 +1,9 @@
-import React,{useRef,useState} from 'react'
+import hoc from 'hocs/hoc'
+import {useRef} from 'react'
 import {useClickOutside} from 'hooks/useClickOutside'
 
-export default C=>({children,...rest})=>
+const getProps=(state,setState)=>
 {
-  const [state,setState]=useState
-  (
-    {
-      showMenu:false
-    }
-  )
   const menuRef = useRef(null)
   useClickOutside
   (
@@ -32,5 +27,12 @@ export default C=>({children,...rest})=>
     menuRef,
     modalClick
   }
-  return <C {...rest} {...props}>{{...state,...children}}</C>
+  return props
 }
+
+const initialState=
+{
+  showMenu:false
+}
+
+export default hoc(initialState)(getProps)

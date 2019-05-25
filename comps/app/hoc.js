@@ -1,7 +1,15 @@
-import React,{useState} from 'react'
+import hoc from 'hocs/hoc'
 
-export default C=>({children,...rest})=>
+const getProps=(state,setState)=>
 {
-  const [state,setState]=useState({})
-  return <C {...rest}>{{...state,...children}}</C>
+  const props=
+  {
+  }
+  return props
 }
+
+const initialState=
+{
+}
+
+export default hoc(initialState)(getProps)
